@@ -2,6 +2,7 @@
 {
     public class Fun
     {
+        // it is predefine delegate
         public static void Main(string[] args)
         {
             Console.WriteLine(AddNInCalculation(Sum, 10, 20, 40));

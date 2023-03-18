@@ -2,13 +2,14 @@
 {
     public class Action
     {
+        // it is predefine delegate 
         public static void Main(string[] args)
         {
             WarpSum(Sum, 10, 20);
         }
         public static void Sum(int a, int b)
         {
-             Console.WriteLine(a + b);
+            Console.WriteLine(a + b);
         }
         public static void WarpSum(Action<int, int> function, int a, int b)
         {

@@ -1,8 +1,8 @@
 ﻿namespace DelegateLearn
 {
-    public delegate void Calculation(int a, int b);
     public class Program
     {
+        public delegate void Calculation(int a, int b);
         public static void Main(string[] args)
         {
             // Create Instance
@@ -20,7 +20,7 @@
             // Method 2
             calculation(10, 20);
 
-            calculation = Substraction;
+            calculation = Subtraction;
             calculation(10, 20);
 
             calculation = Multiplication;
@@ -33,7 +33,7 @@
         {
             Console.WriteLine(a + b);
         }
-        public static void Substraction(int a, int b)
+        public static void Subtraction(int a, int b)
         {
             Console.WriteLine(a - b);
         }

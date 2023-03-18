@@ -5,7 +5,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>DelegateLearn.MulticastDelegate</StartupObject>
+    <StartupObject>AsyncDelegate.Solution2</StartupObject>
   </PropertyGroup>
 
 </Project>
