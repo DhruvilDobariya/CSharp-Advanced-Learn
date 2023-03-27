@@ -5,7 +5,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>AsyncDelegate.Solution2</StartupObject>
+    <StartupObject>AsyncDelegate.Problem</StartupObject>
   </PropertyGroup>
 
 </Project>

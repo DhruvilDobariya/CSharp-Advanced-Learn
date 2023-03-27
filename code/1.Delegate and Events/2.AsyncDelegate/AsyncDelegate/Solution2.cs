@@ -12,7 +12,6 @@
             Console.WriteLine("Control going to the Sum method");
             Task<int> result = calculation.Invoke(10, 20);
             Console.WriteLine("Control back to the Main method");
-
             Console.WriteLine(result.Result);
 
             Console.WriteLine("Program end");
