@@ -13,7 +13,7 @@
         }
         public static int AddNInCalculation(Func<int, int, int> function, int n, int a, int b)
         {
-            // Func<returntype, typeofarg1, typeofarg2, ...>
+            // Func<typeofarg1, typeofarg2, ..., returntype>
             return n + function(a, b);
         }
     }
