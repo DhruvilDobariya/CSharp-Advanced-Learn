@@ -1,10 +1,12 @@
 ﻿using DisplayCollection;
 using LinqLearn.Models;
 
-namespace LinqLearn.Projection
+namespace LinqLearn.Quantifier
 {
-    public class SelectMany
+    public class Contains
     {
+        // It check member contains particular things in value or not
+
         private static List<string> _names = new List<string>() { "Dhruvil", "Dobariya" };
 
         private static List<StudentWithLanguage> _students = new List<StudentWithLanguage>()
@@ -38,24 +40,24 @@ namespace LinqLearn.Projection
 
         public static void Main(string[] args)
         {
-            var list1 = from name in _names
-                        from character in name
-                        select character;
+            bool isContainsDhruvil = _names.Contains("Dhruvil");
+            Console.WriteLine(isContainsDhruvil);
 
-            Display.DisplayList(list1.ToList());
+            bool isContainsDhaval = _names.Contains("Dhaval");
+            Console.WriteLine(isContainsDhaval);
 
-            var list2 = _names.SelectMany(name => name).ToList();
-            Display.DisplayList(list2);
+            //bool IsContainsDhruv = _students.Contains(new StudentWithLanguage()
+            //{
+            //    Id = 5,
+            //    Name = "Dhruv Rathod",
+            //    Age = 20,
+            //    Languages = new List<string>() { "C++", "C", "Java" }
+            //});
+            //Console.WriteLine(IsContainsDhruv);
 
-            // Output: [ D, h, r, u, v, i, l, D, o, b, a, r, i, y, a ]
+            var list = _students.Where(student => student.Languages.Contains("C#")).ToList();
 
-            var list3 = from student in _students
-                        from language in student.Languages
-                        select language;
-            Display.DisplayList(list3.ToList());
-
-            var list4 = _students.SelectMany(student => student.Languages).ToList();
-            Display.DisplayList(list4);
+            Display.Table(list);
         }
     }
 }

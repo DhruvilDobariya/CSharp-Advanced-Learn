@@ -4,6 +4,8 @@ namespace LinqLearn.Sorting
 {
     public class Reverse
     {
+        // Reveres dataset
+
         private static List<int> _arr = new List<int>() { 10, 1, 0, -10, 10, 20, 17, 27 };
         public static void Main(string[] args)
         {
