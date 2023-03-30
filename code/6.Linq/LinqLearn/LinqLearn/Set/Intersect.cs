@@ -1,7 +1,6 @@
 ﻿using DisplayCollection;
 using LinqLearn.Interfaces;
 using LinqLearn.Models;
-using System.Diagnostics.CodeAnalysis;
 
 namespace LinqLearn.Set
 {
