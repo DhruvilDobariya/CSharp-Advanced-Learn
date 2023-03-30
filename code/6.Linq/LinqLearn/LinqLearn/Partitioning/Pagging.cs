@@ -11,7 +11,7 @@ namespace LinqLearn.Partitioning
             int page, size;
 
             Console.Write("Enter size of page: ");
-            if(!int.TryParse(Console.ReadLine(), out size))
+            if (!int.TryParse(Console.ReadLine(), out size))
             {
                 Console.WriteLine("size is not valid");
                 Environment.Exit(0);
