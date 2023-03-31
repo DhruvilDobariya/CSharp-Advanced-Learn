@@ -1,10 +1,5 @@
 ﻿using DisplayCollection;
 using LinqLearn.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LinqLearn.Join
 {
@@ -45,7 +40,7 @@ namespace LinqLearn.Join
                            EmployeeName = employee.EmployeeName,
                            CityId = employee.CityId,
                            CompanyName = employeeCompany != null ? employeeCompany.CompanyName : "NA"
-                        };
+                       };
 
             Display.Table(list.ToList());
         }

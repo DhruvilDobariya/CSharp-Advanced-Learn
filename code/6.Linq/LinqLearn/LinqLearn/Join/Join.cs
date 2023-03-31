@@ -55,7 +55,8 @@ namespace LinqLearn.Join
 
             var list2 = _employees
                 .Join(_companies, employee => employee.CompanyId, company => company.CompanyId, (employee, company) => (employee, company))
-                .Join(_cities, employeeWithCompany => employeeWithCompany.employee.CityId, city => city.CityId, (employeeWithCompany, city) => new {
+                .Join(_cities, employeeWithCompany => employeeWithCompany.employee.CityId, city => city.CityId, (employeeWithCompany, city) => new
+                {
                     EmployeId = employeeWithCompany.employee.EmployeeId,
                     CompanyName = employeeWithCompany.company.CompanyName,
                     CityName = city.CityName,

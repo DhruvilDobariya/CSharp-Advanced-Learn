@@ -1,5 +1,4 @@
-﻿using DisplayCollection;
-using LinqLearn.Models;
+﻿using LinqLearn.Models;
 
 namespace LinqLearn.Join
 {
@@ -44,11 +43,11 @@ namespace LinqLearn.Join
             }
             Console.WriteLine();
 
-            var list2 = _companies.GroupJoin(_employees, company => company.CompanyId, employee => employee.CompanyId, (company, employees) => new { company, employees});
+            var list2 = _companies.GroupJoin(_employees, company => company.CompanyId, employee => employee.CompanyId, (company, employees) => new { company, employees });
 
-            foreach(var element in list2)
+            foreach (var element in list2)
             {
-                foreach(var employee in element.employees)
+                foreach (var employee in element.employees)
                 {
                     Console.WriteLine($"{employee.EmployeeName} from {element.company.CompanyName}");
                 }
