@@ -10,7 +10,7 @@
             calculation = Multiplication; // I want to subscribe multiplication also, but some how i miss to put + before =, so now it over write the above subscription and only we get multiplication and after subscriptions.
             calculation += Division;
 
-            calculation(10, 20);
+            calculation(10, 20);  
         }
         public static void Addition(int a, int b)
         {

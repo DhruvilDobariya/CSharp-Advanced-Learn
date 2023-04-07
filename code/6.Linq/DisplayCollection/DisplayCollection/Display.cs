@@ -1,5 +1,4 @@
-﻿using LinqLearn.Models;
-using Spectre.Console;
+﻿using Spectre.Console;
 using System.Collections;
 using System.Reflection;
 
@@ -7,35 +6,6 @@ namespace DisplayCollection
 {
     public static class Display
     {
-        private static List<StudentWithLanguage> _students = new List<StudentWithLanguage>()
-        {
-            new StudentWithLanguage()
-            {
-                Id = 1, Name = "Dhruvil Dobariya", Age = 21,
-                Languages = new List<string>(){ "C#", "Java", "TS" }
-            },
-            new StudentWithLanguage()
-            {
-                Id = 2, Name = "Dhaval Dobariya", Age = 13,
-                Languages = new List<string>(){ "Dart", "JavaScript", "C#" }
-            },
-            new StudentWithLanguage()
-            {
-                Id = 3, Name = "Bhargav Vachhani", Age = 18,
-                Languages = new List < string >() { "C#", "Python", "JavaScript" }
-            },
-            new StudentWithLanguage()
-            {
-                Id = 4, Name = "Jenil Vasoya", Age = 20,
-                Languages = new List<string>(){ "Objective - C", "Java", "Swift" }
-            },
-            new StudentWithLanguage()
-            {
-                Id = 5, Name = "Dhruv Rathod", Age = 20,
-                Languages = new List<string>(){ "C++", "C", "Java" }
-            }
-        };
-
         public static void DisplayList(ICollection list)
         {
             if (list.Count != 0)
@@ -117,6 +87,23 @@ namespace DisplayCollection
                 Console.WriteLine("dictionary is empty");
             }
         }
+        public static void DisplayObject(dynamic obj)
+        {
+            string str = "{ ";
+            PropertyInfo[] propertyInfo = obj.GetType().GetProperties();
+            for (int i = 0; i < propertyInfo.Count(); i++)
+            {
+                if (i != propertyInfo.Count() - 1)
+                {
+                    str += propertyInfo[i].Name + ": " + propertyInfo[i].GetValue(obj) + ", ";
+                }
+                else
+                {
+                    str += propertyInfo[i].Name + ": " + propertyInfo[i].GetValue(obj);
+                }
+            }
+            Console.WriteLine(str + " }");
+        }
         public static void Table(ICollection list)
         {
             var table = new Table();
@@ -136,7 +123,7 @@ namespace DisplayCollection
                     if ((propertyInfo[i].PropertyType.Namespace.ToString().Contains("System.Collections")))
                     {
                         string str = "";
-                        foreach (var subElement in (ICollection)propertyInfo[i].GetValue(element)) 
+                        foreach (var subElement in (ICollection)propertyInfo[i].GetValue(element))
                         {
                             str += subElement + " ";
                         }
@@ -144,7 +131,14 @@ namespace DisplayCollection
                     }
                     else
                     {
-                        arr[i] = propertyInfo[i].GetValue(element).ToString();
+                        if (propertyInfo[i].GetValue(element) == null)
+                        {
+                            arr[i] = "NULL";
+                        }
+                        else
+                        {
+                            arr[i] = propertyInfo[i].GetValue(element).ToString();
+                        }
                     }
                 }
                 table.AddRow(arr);

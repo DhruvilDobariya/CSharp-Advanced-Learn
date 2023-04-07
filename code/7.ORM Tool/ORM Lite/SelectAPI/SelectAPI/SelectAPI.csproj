@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <StartupObject>SelectAPI.Single</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySqlConnector" Version="2.2.5" />
+    <PackageReference Include="ServiceStack.OrmLite.MySql" Version="6.8.0" />
+    <PackageReference Include="Spectre.Console" Version="0.46.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DisplayCollection">
+      <HintPath>..\..\..\..\6.Linq\DisplayCollection\DisplayCollection\bin\Release\net6.0\DisplayCollection.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
