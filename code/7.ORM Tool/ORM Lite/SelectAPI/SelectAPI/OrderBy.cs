@@ -4,7 +4,7 @@ using ServiceStack.OrmLite;
 
 namespace SelectAPI
 {
-    public class Single
+    public class OrderBy
     {
         private readonly static OrmLiteConnectionFactory _dbFactory = new OrmLiteConnectionFactory("Server = localhost; Database = JoinLearn; User = root; Password = Admin;", MySqlDialect.Provider);
 
@@ -12,14 +12,11 @@ namespace SelectAPI
         {
             using (var db = _dbFactory.Open())
             {
-                Student student1 = db.SingleById<Student>(10);
-                Display.DisplayObject(student1);
+                var query1 = db.From<Student>().Select().OrderBy("FirstName");
+                Display.Table(db.Select(query1));
 
-                Student student2 = db.Single<Student>(student => student.StudentId == 20);
-                Display.DisplayObject(student2);
-
-                Student student3 = db.SingleWhere<Student>("FirstName", "Sadye");
-                Display.DisplayObject(student3);
+                var query2 = db.From<Student>().Select().OrderByDescending("FirstName");
+                Display.Table(db.Select(query2));
             }
         }
     }

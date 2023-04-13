@@ -1,19 +1,16 @@
-﻿using ServiceStack.DataAnnotations;
-
-namespace SelectAPI.Models
+﻿namespace SelectAPI.Models
 {
-    public class Student
+    public class StudentWithCollageAndCity
     {
-        [PrimaryKey]
         public int StudentId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Gender { get; set; }
-
-        [ForeignKey(typeof(Collage))]
         public int CollageId { get; set; }
-        [ForeignKey(typeof(City))]
+        public string Name { get; set; }
         public int CityId { get; set; }
+        public string CityName { get; set; }
+
     }
 }
