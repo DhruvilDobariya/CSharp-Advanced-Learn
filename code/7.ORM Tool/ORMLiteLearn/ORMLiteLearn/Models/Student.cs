@@ -1,6 +1,6 @@
 ﻿using ServiceStack.DataAnnotations;
 
-namespace SelectAPI.Models
+namespace ORMLiteLearn.Models
 {
     public class Student
     {

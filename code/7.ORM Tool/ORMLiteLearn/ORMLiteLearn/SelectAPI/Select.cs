@@ -1,8 +1,8 @@
 ﻿using DisplayCollection;
-using SelectAPI.Models;
+using ORMLiteLearn.Models;
 using ServiceStack.OrmLite;
 
-namespace SelectAPI
+namespace ORMLiteLearn.SelectAPI
 {
     public class Select
     {

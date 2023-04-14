@@ -1,9 +1,9 @@
-﻿using SelectAPI.Models;
+﻿using ORMLiteLearn.Models;
 using ServiceStack;
 using ServiceStack.OrmLite;
 using ServiceStack.OrmLite.Legacy;
 
-namespace SelectAPI
+namespace ORMLiteLearn.SelectAPI
 {
     public class Join
     {
