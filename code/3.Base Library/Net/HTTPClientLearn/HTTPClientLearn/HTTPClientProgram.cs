@@ -53,20 +53,25 @@ namespace HTTPClientDemo
         }
         public static void AddToDo()
         {
-            HttpClient httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
-
-            StringContent stringContent = new StringContent(JsonConvert.SerializeObject(new Todo() { userId = 1, title = "AddDataTitle", completed = true }));
-
-            HttpResponseMessage responce = httpClient.PostAsync("todos", stringContent).Result;
-            if (responce.IsSuccessStatusCode)
+            using(HttpClient httpClient = new HttpClient())
             {
-                string todo = responce.Content.ReadAsStringAsync().Result.ToString();
-                Console.WriteLine(todo);
-            }
-            else
-            {
-                Console.WriteLine(responce.StatusCode + " " + responce.ReasonPhrase);
+                httpClient.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
+                httpClient.DefaultRequestHeaders.Add("Accept", "text/plain");
+                httpClient.DefaultRequestHeaders.Add("Content-Type", "application/json");
+                httpClient.DefaultRequestHeaders.Remove("Accept");
+
+                StringContent stringContent = new StringContent(JsonConvert.SerializeObject(new Todo() { userId = 1, title = "AddDataTitle", completed = true }));
+
+                HttpResponseMessage responce = httpClient.PostAsync("todos", stringContent).Result;
+                if (responce.IsSuccessStatusCode)
+                {
+                    string todo = responce.Content.ReadAsStringAsync().Result.ToString();
+                    Console.WriteLine(todo);
+                }
+                else
+                {
+                    Console.WriteLine(responce.StatusCode + " " + responce.ReasonPhrase);
+                }
             }
         }
         public static void UpdateToDo()
