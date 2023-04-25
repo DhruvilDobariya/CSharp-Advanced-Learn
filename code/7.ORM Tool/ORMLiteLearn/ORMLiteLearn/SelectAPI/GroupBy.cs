@@ -13,7 +13,7 @@ namespace ORMLiteLearn.SelectAPI
             {
                 var query1 = db.From<Student>().GroupBy(student => student.CollageId).Select(student => new { student.CollageId, Count = Sql.Count(student.StudentId) });
                 var result1 = db.KeyValuePairs<string, int>(query1);
-                
+
                 foreach (var row in result1)
                 {
                     Console.WriteLine($"CollageId: {row.Key}, Count: {row.Value}");
