@@ -1,6 +1,7 @@
 ﻿using DisplayCollection;
 using ORMLiteLearn.Models;
 using ServiceStack.OrmLite;
+using ServiceStack.OrmLite.Legacy;
 
 namespace ORMLiteLearn.SelectAPI
 {
@@ -17,7 +18,7 @@ namespace ORMLiteLearn.SelectAPI
 
                 Student student2 = db.Single<Student>(student => student.StudentId == 20);
                 Display.DisplayObject(student2);
-
+              
                 Student student3 = db.SingleWhere<Student>("FirstName", "Sadye");
                 Display.DisplayObject(student3);
             }

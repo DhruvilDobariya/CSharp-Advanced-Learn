@@ -7,12 +7,12 @@
             Type t = typeof(string);
 
             Console.WriteLine(t);
-            Console.WriteLine(t.Name);
-            Console.WriteLine(t.FullName);
+            Console.WriteLine(t.Name); // String
+            Console.WriteLine(t.FullName); // System.String
             Console.WriteLine(t.BaseType);
-            Console.WriteLine(t.Namespace);
-            Console.WriteLine(t.Assembly.FullName);
-            Console.WriteLine(t.Module);
+            Console.WriteLine(t.Namespace); // System
+            Console.WriteLine(t.Assembly.FullName); // System.Private.CoreLib
+            Console.WriteLine(t.Module); // System.Private.CoreLib.dll
             Console.WriteLine(t.Attributes);
 
             Console.WriteLine(t.IsClass);

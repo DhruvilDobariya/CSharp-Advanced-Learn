@@ -7,7 +7,7 @@ namespace ORMLiteLearn.SelectAPI
 {
     public class SqlExpression
     {
-        private readonly static OrmLiteConnectionFactory _dbFactory = new OrmLiteConnectionFactory("Server = localhost; Database = JoinLearn; User = root; Password = Admin;", MySqlDialect.Provider);
+        private readonly static OrmLiteConnectionFactory _dbFactory = new OrmLiteConnectionFactory("Server = localhost; Database = JoinLearn; User = Admin; Password = gs@123;", MySqlDialect.Provider);
 
         public static void Main(string[] args)
         {

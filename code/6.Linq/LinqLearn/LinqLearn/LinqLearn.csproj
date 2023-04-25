@@ -5,7 +5,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>LinqLearn.Conversion.Cast</StartupObject>
+    <StartupObject>LinqLearn.Projection.SelectMany</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
