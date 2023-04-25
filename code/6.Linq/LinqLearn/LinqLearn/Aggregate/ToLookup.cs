@@ -22,7 +22,7 @@ namespace LinqLearn.Aggregate
         public static void Main(string[] args)
         {
             var dictionary2 = _students.ToLookup(student => student.Age);
-
+            
             foreach (var element in dictionary2)
             {
                 Console.WriteLine($"Age: {element.Key}");
