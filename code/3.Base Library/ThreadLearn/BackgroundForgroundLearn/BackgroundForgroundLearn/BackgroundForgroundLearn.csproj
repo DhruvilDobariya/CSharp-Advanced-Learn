@@ -5,7 +5,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>BackgroundForgroundLearn.Forground</StartupObject>
+    <StartupObject>BackgroundForgroundLearn.Foreground</StartupObject>
   </PropertyGroup>
 
 </Project>

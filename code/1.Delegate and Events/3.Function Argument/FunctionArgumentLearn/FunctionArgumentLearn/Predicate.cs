@@ -4,6 +4,7 @@
     {
         // it is predefine delegate
         // it only use to predict value n boolean
+        // it take only one parameter
         public static void Main(string[] args)
         {
             Console.WriteLine($"Is odd: {Check(21, IsOdd)}");
